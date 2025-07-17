@@ -10,4 +10,6 @@ function getComputerChoice() {
   }
 }
 
-console.log(getComputerChoice());
+function getHumanChoice() {
+  return prompt("Choose your play.", "");
+}
