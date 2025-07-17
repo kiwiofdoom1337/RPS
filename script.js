@@ -17,11 +17,13 @@ function getHumanChoice() {
 function playGame() {
   let humanScore = 0;
   let computerScore = 0;
+  let roundCount = 1;
 
   function playRound(humanChoice, computerChoice) {
     humanChoice = getHumanChoice();
     computerChoice = getComputerChoice();
 
+    console.log(`Human versus Computer! Round ${roundCount}!`);
     if (
       (humanChoice.toLowerCase() === "rock" && computerChoice === "scissors") ||
       (humanChoice.toLowerCase() === "paper" && computerChoice === "rock") ||
@@ -56,16 +58,21 @@ function playGame() {
     }
   }
 
-  while (humanScore < 5 && computerScore < 5) {
+  while (roundCount < 5) {
     playRound();
+    roundCount++;
   }
 
-  if (humanScore === 5) {
-    console.log("You win the set! Humanity keeps!");
+  if (humanScore > computerScore && roundCount === 5) {
+    console.log("You win the set! Humanity keeps thriving!");
   }
 
-  if (computerScore === 5) {
+  if (humanScore < computerScore && roundCount === 5) {
     console.log("You lose the set! The machines reign supreme!");
+  }
+
+  if (humanScore === computerScore && roundCount === 5) {
+    console.log("It's a stalemate! The struggle continues...");
   }
 }
 
