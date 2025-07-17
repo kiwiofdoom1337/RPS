@@ -61,7 +61,7 @@ function playGame() {
   }
 
   if (humanScore === 5) {
-    console.log("You win the set! Congratulations!");
+    console.log("You win the set! Humanity keeps!");
   }
 
   if (computerScore === 5) {
