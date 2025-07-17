@@ -17,9 +17,10 @@ function getHumanChoice() {
 function playGame() {
   let humanScore = 0;
   let computerScore = 0;
-  let roundCount = 1;
+  let roundCount = 0;
 
   function playRound(humanChoice, computerChoice) {
+    roundCount++;
     humanChoice = getHumanChoice();
     computerChoice = getComputerChoice();
 
@@ -60,7 +61,6 @@ function playGame() {
 
   while (roundCount < 5) {
     playRound();
-    roundCount++;
   }
 
   if (humanScore > computerScore && roundCount === 5) {
